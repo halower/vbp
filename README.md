@@ -1,4 +1,5 @@
-## 如何使用
+## easy-cli 旨在帮你搭建一个简单易用的前端业务框架。
+# 如何使用
 ```
 $ npm install -g vue-cli
 $ vue init halower/easy-cli  my-project
