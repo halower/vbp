@@ -60,7 +60,12 @@ import demo from '@/pages/demo/z-routes
 routes = routes.concat(demo)
 ```
 
-## 业务服务相关文件夹说明 (directives)
+## 指令相关文件夹说明 (directives)
+
+功能
+全局指令处理，只需要在此处使用Vue.directive即可扩展项目的指令集
+
+## 业务服务相关文件夹说明 (fetch)
 - 功能
 > 将繁琐的数据处理和关联性的逻辑操作从页面中剥离,降低服务与页面的耦合
 - 用法
