@@ -12,6 +12,20 @@ npm run build or npm run pro
 
 # 构建生产并查看捆绑分析器报告
 npm run build --report or npm run pro --report
+{{#unit}}
+# 运行单元测试
+npm run unit
+{{/unit}}
+{{#e2e}}
+
+# 运行e2e测试
+npm run e2e
+{{/e2e}}
+{{#if_or unit e2e}}
+
+# 运行所有测试
+npm test
+{{/if_or}}
 ```
 # 项目说明
 

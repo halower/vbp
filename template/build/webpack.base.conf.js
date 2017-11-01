@@ -22,12 +22,15 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.vue', '.json'],
     alias: {
+      {{#if_eq build "standalone"}}
       'vue$': 'vue/dist/vue.esm.js',
+      {{/if_eq}}
       '@': resolve('src'),
     }
   },
   module: {
     rules: [
+      {{#lint}}
       {
         test: /\.(js|vue)$/,
         loader: 'eslint-loader',
@@ -37,6 +40,7 @@ module.exports = {
           formatter: require('eslint-friendly-formatter')
         }
       },
+      {{/lint}}
       {
         test: /\.vue$/,
         loader: 'vue-loader',
