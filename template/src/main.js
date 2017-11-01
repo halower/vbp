@@ -6,7 +6,7 @@ import Vue from 'vue'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 import App from './App'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 {{#router}}
 import Router from 'vue-router'
-import router from '@/config/routestore'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+import routestore from '@/config/routestore'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 {{/router}}
 import {apistore} from '@/config/apistore'
 import directive from '@/directives'
@@ -26,7 +26,7 @@ const router = new Router({
 Vue.prototype.$api = apistore
 Vue.prototype.$eventbus = eventbus
 Vue.config.productionTip = false{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
-
+/* eslint-disable no-new */
 new Vue({
   el: '#app',
   store,
