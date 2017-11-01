@@ -14,12 +14,14 @@ import store from '@/store'
 import eventbus from '@/store/eventbus'
 
 Vue.use(directive)
+{{#router}}
 Vue.use(Router)
 
 const router = new Router({
   routes: routestore,
   mode: 'history'
 })
+{{/router}}
 
 Vue.prototype.$api = apistore
 Vue.prototype.$eventbus = eventbus
@@ -35,6 +37,7 @@ new Vue({
   render: h => h(App){{#if_eq lintConfig "airbnb"}},{{/if_eq}}
   {{/if_eq}}
   {{#if_eq build "standalone"}}
+  template: '<App/>',
   components: { App }{{#if_eq lintConfig "airbnb"}},{{/if_eq}}
   {{/if_eq}}
 }){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
