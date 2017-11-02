@@ -1,4 +1,49 @@
-## vbp 旨在帮你搭建一个简单易用的前端业务框架。
+## vbp 会帮你自动搭建一个简单易用的前端业务框架。
+
+`生成文档结构`
+```
+│  App.vue
+│  main.js
+│
+├─assets
+│      logo.png
+│
+├─components
+│      _README.md
+│
+├─config
+│      apistore.js
+│      baseapi.js
+│      req.conf.js
+│      routestore.js
+│      service.conf.js
+│      _README.md
+│
+├─directives
+│      index.js
+│      _README.md
+│
+├─fetch
+│      demo-api.js
+│      _README.md
+│
+├─pages
+│  │  _README.md
+│  │
+│  └─demo
+│          HelloWorld.vue
+│          z-routes.js
+│
+└─store
+    │  eventbus.js
+    │  index.js
+    │  mutation-types.js
+    │  store.js
+    │  _README.md
+    │
+    └─modules
+            test.js
+```
 #### QQ讨论群:`255965810`
 # 如何使用
 ```
