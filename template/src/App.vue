@@ -6,6 +6,7 @@
     {{else}}
     <HelloWorld/>
     {{/router}}
+    <v-dialog/>
   </div>
 </template>
 

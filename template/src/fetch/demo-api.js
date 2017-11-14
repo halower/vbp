@@ -9,7 +9,7 @@ class DemoApiController extends BaseApiController {
     */
   test () {
     // 假设这里有很复杂的前端逻辑
-    return this.get([this.demo.test], {}).then(res => {
+    return this.get(this.demo.test, {}).then(res => {
       return res.data
     })
   }
