@@ -148,6 +148,9 @@ export default new DemoApiController()
 - 用法
 > 在配置完路由后，请按照config中的说明文档，将路由导入 routestore.js
 
+## 多语言相关文件夹 （languages）
+简易按照不同的业务需要添加分组翻译，便于整理，添加不同的语言类型后在 ```config/i18n.js```引入相应的语言包
+
 ## 状态相关管理文件夹 (store)
 - 功能
 > 统一管理项目状态,在复杂的交互项目中可以启用该模块，可以减少事件的不便性
