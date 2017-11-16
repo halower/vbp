@@ -13,17 +13,25 @@ import directive from '@/directives'
 import store from '@/store'
 import eventbus from '@/store/eventbus'
 import VModal from 'vue-js-modal'
+import VueI18n from 'vue-i18n'
+import messages from '@/config/i18n'
 
 Vue.use(directive)
 {{#router}}
 Vue.use(Router)
 Vue.use(VModal, { dialog: true })
+Vue.use(VueI18n)
 
 const router = new Router({
   routes: routestore,
   mode: 'history'
 })
 {{/router}}
+
+const i18n = new VueI18n({
+  locale: 'en',
+  messages
+})
 
 Vue.prototype.$api = apistore
 Vue.prototype.$eventbus = eventbus
@@ -32,6 +40,7 @@ Vue.config.productionTip = false{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 new Vue({
   el: '#app',
   store,
+  i18n,
   {{#router}}
   router,
   {{/router}}

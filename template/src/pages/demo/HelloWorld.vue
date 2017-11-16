@@ -1,10 +1,14 @@
 <template>
  <div>
-   <h3>该页面在实际开发可以删除，本例用于使用vuex管理页面状态的演示</h3>
-    <h2>当前编码：\{{code}}</h2>
-    <h2>之前编码: \{{precode}}</h2>
-    <button @click="changeCode">改变编码</button>
-    <button @click="alert">简单弹框</button>
+   <h3>\{{$t('test.title')}}</h3>
+    <h2>\{{$t('test.currentcode')}}：{{code}}</h2>
+    <h2>\{{$t('test.precode')}}: {{precode}}</h2>
+    <button @click="changeCode">{{$t('test.changecode')}}</button>
+    <button @click="alert">{{$t('test.simplealert')}}</button>
+    <select v-model="lang" @change="$i18n.locale = lang">
+       <option value='zh'>中文</option>
+       <option value='en'>Engilsh</option>
+    </select>
  </div>
 </template>
 
@@ -14,6 +18,11 @@ const { mapState, mapActions, mapGetters } = createNamespacedHelpers('test')
 
 export default {
   name: 'HelloWorld',
+  data () {
+    return {
+      lang: 'en'
+    }
+  },
   computed: {
     ...mapState(['code']),
     ...mapGetters(['precode'])
@@ -22,11 +31,11 @@ export default {
     ...mapActions(['changeCode']),
     alert () {
       this.$modal.show('dialog', {
-        title: '测试弹框',
-        text: `<span style='color:red'>当前编码</span> = ${this.code}`,
+        title: this.$t('test.alerttitle'),
+        text: `<span style='color:red'>${this.$t('test.code')}</span> = ${this.code}`,
         buttons: [
-          { title: '确认', handler: () => { alert('测试弹框!') } },
-          { title: '关闭' }
+          { title: this.$t('test.ok'), handler: () => { alert(this.$t('test.welcome')) } },
+          { title: this.$t('test.close') }
         ]
       })
     }
