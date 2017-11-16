@@ -5,7 +5,7 @@ const state = {
   oldcode: ''
 }
 const getters = {
-  precode: state => state.oldcode ? state.oldcode : '暂无编码'
+  precode: state => state.oldcode ? state.oldcode : '--------'
 }
 
 const mutations = {
