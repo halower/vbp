@@ -1,2 +1,2 @@
 // 测试模块
-export const CHANGE_NAME = 'CHANGE_NAME' // 测试更改模块名称
+export const CHANGE_CODE = 'CHANGE_CODE' // 测试更改模块编码

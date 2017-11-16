@@ -1,20 +1,22 @@
 import * as types from '@/store/mutation-types'
 
 const state = {
-  name: 'vuex 测试用例'
+  code: '000000',
+  oldcode: ''
 }
 const getters = {
-  greet: state => 'hello,' + state.name
+  precode: state => state.oldcode ? state.oldcode : '暂无编码'
 }
 
 const mutations = {
-  [types.CHANGE_NAME] (state, newName) {
-    state.name = newName + Math.ceil(Math.random() * 100000)
+  [types.CHANGE_CODE] (state) {
+    state.oldcode = state.code
+    state.code = Math.ceil(Math.random() * 100000)
   }
 }
 const actions = {
-  changeName ({commit}, newName) {
-    commit(types.CHANGE_NAME, newName)
+  changeCode ({commit}) {
+    commit(types.CHANGE_CODE)
   }
 }
 export default{
