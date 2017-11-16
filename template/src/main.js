@@ -29,7 +29,7 @@ const router = new Router({
 {{/router}}
 
 const i18n = new VueI18n({
-  locale: 'en',
+  locale: 'zh',
   messages
 })
 
