@@ -12,10 +12,12 @@ import {apistore} from '@/config/apistore'
 import directive from '@/directives'
 import store from '@/store'
 import eventbus from '@/store/eventbus'
+import VModal from 'vue-js-modal'
 
 Vue.use(directive)
 {{#router}}
 Vue.use(Router)
+Vue.use(VModal, { dialog: true })
 
 const router = new Router({
   routes: routestore,
