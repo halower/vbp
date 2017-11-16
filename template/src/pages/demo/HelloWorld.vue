@@ -22,7 +22,7 @@ export default {
     ...mapActions(['changeCode']),
     alert () {
       this.$modal.show('dialog', {
-        title: this.name,
+        title: '测试弹框',
         text: `<span style='color:red'>当前编码</span> = ${this.code}`,
         buttons: [
           { title: '确认', handler: () => { alert('测试弹框!') } },
