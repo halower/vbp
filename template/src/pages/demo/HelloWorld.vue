@@ -20,7 +20,7 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
-      lang: 'en'
+      lang: 'zh'
     }
   },
   computed: {
