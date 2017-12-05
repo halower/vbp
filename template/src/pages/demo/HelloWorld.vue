@@ -17,7 +17,7 @@ import { createNamespacedHelpers } from 'vuex'
 const { mapState, mapActions, mapGetters } = createNamespacedHelpers('test')
 
 export default {
-  name: 'HelloWorld',
+  name: 'helloworld',
   data () {
     return {
       lang: 'zh'
