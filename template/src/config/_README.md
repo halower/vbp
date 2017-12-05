@@ -1,6 +1,6 @@
 ## 配置相关文件夹说明
 
-### `req.conf.js`
+### `api.conf.js`
 - 功能:
 > 集中管理各个业务模块的后端请求地址,便于排错和集中管理
 - 用法：
@@ -12,7 +12,7 @@
  ```
 
 ### `service.conf.js`
-- 功能: 按照项目的需求初始化一些服务的配置参数,例如请求`http://127.0.0.1/api/test`,则根路径(`baseUrl`)为`http://127.0.0.1`,这样在`req.conf.js`只需要写相对路径，其中```baseUrl```为必须参数
+- 功能: 按照项目的需求初始化一些服务的配置参数,例如请求`http://127.0.0.1/api/test`,则根路径(`baseUrl`)为`http://127.0.0.1`,这样在`api.conf.js`只需要写相对路径，其中```baseUrl```为必须参数
 > 
 
 ### `apistore.js`
@@ -23,7 +23,7 @@
  this.$api.user.adduser({name:'halower'}) 
  ```
 - 依赖文件:
->  `req.conf.js`、 `fetch(文件夹)`
+>  `api.conf.js`、 `fetch(文件夹)`
 
 ### `baseapi.js`
 - 功能:

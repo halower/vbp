@@ -38,7 +38,7 @@ npm test
 
 ## 配置相关文件夹说明 (config)
 
-### `req.conf.js`
+### `api.conf.js`
 - 功能:
 > 集中管理各个业务模块的后端请求地址,便于排错和集中管理
 - 用法：
@@ -50,7 +50,7 @@ npm test
  ```
 
 ### `service.conf.js`
-- 功能: 按照项目的需求初始化一些服务的配置参数,例如请求`http://127.0.0.1/api/test`,则根路径(`baseUrl`)为`http://127.0.0.1`,这样在`req.conf.js`只需要写相对路径，其中```baseUrl```为必须参数
+- 功能: 按照项目的需求初始化一些服务的配置参数,例如请求`http://127.0.0.1/api/test`,则根路径(`baseUrl`)为`http://127.0.0.1`,这样在`api.conf.js`只需要写相对路径，其中```baseUrl```为必须参数
 > 
 
 ### `apistore.js`
@@ -61,7 +61,7 @@ npm test
  this.$api.user.adduser({name:'halower'}) 
  ```
 - 依赖文件:
->  `req.conf.js`、 `fetch(文件夹)`
+>  `api.conf.js`、 `fetch(文件夹)`
 
 ### `baseapi.js`
 - 功能:
@@ -89,7 +89,7 @@ routes = routes.concat(demo)
 > 将繁琐的数据处理和关联性的逻辑操作从页面中剥离,降低服务与页面的耦合
 - 用法
 1. 引入服务基类并继承它
-2. 方法中的url路径需要使用到`/config/req.conf.js` 的模块,由于已经使用代理处理过，因此只需要使用`this.业务模块名.请求地址`的模式即可以获取真实请求路径
+2. 方法中的url路径需要使用到`/config/api.conf.js` 的模块,由于已经使用代理处理过，因此只需要使用`this.业务模块名.请求地址`的模式即可以获取真实请求路径
 ```
 import BaseApiController from '@/config/baseapi'
 
@@ -110,7 +110,7 @@ class DemoApiController extends BaseApiController {
 export default new DemoApiController()
 ```
 - 依赖文件:
->  `req.conf.js`
+>  `api.conf.js`
 
 ## 业务页面相关文件夹 （pages）
 - 功能

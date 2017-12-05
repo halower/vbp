@@ -175,6 +175,7 @@ import * as types from '@/store/mutation-types'
   }
 ```
 4. 页面使用
+
 ```
 <template>
  <div>
@@ -199,6 +200,7 @@ export default {
   }
 };
 </script>
+
 ```
 5. 说明
  - 模块中需要使用 `namespaced: true` 标记
