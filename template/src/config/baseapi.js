@@ -52,4 +52,36 @@ export default class BaseApiController {
         })
     })
   }
+
+  delete (url, params) {
+    return new Promise((resolve, reject) => {
+      axios.delete(url, {params: params})
+        .then(response => {
+          resolve(response.data)
+        }, err => {
+          reject(err)
+        })
+        .catch((error) => {
+          reject(error)
+        })
+    })
+  }
+
+  put (url, params) {
+    return new Promise((resolve, reject) => {
+      axios.put(url, params)
+        .then(response => {
+          resolve(response.data)
+        }, err => {
+          reject(err)
+        })
+        .catch((error) => {
+          reject(error)
+        })
+    })
+  }
+
+  all(promises) {
+    return Promise.all(promises)
+  }
 }
