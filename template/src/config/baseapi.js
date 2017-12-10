@@ -81,7 +81,7 @@ export default class BaseApiController {
     })
   }
 
-  all(promises) {
+  all (promises) {
     return Promise.all(promises)
   }
 }
