@@ -6,7 +6,6 @@
     {{else}}
     <HelloWorld/>
     {{/router}}
-    <v-dialog/>
   </div>
 </template>
 
@@ -22,7 +21,6 @@ export default {
   }{{#if_eq lintConfig "airbnb"}},{{/if_eq}}{{/router}}
 }{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 </script>
-
 <style>
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
