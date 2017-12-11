@@ -13,7 +13,6 @@ import directive from '@/directives'
 import filter from '@/filters'
 import store from '@/store'
 import eventbus from '@/store/eventbus'
-import VModal from 'vue-js-modal'
 import VueI18n from 'vue-i18n'
 import messages from '@/config/i18n'
 
@@ -21,7 +20,6 @@ Vue.use(directive)
 Vue.use(filter)
 {{#router}}
 Vue.use(Router)
-Vue.use(VModal, { dialog: true })
 Vue.use(VueI18n)
 
 const router = new Router({
