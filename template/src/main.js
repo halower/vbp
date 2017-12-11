@@ -10,6 +10,7 @@ import routestore from '@/config/routestore'{{#if_eq lintConfig "airbnb"}};{{/if
 {{/router}}
 import {apistore} from '@/config/apistore'
 import directive from '@/directives'
+import filter from '@/filters'
 import store from '@/store'
 import eventbus from '@/store/eventbus'
 import VModal from 'vue-js-modal'
@@ -17,6 +18,7 @@ import VueI18n from 'vue-i18n'
 import messages from '@/config/i18n'
 
 Vue.use(directive)
+Vue.use(filter)
 {{#router}}
 Vue.use(Router)
 Vue.use(VModal, { dialog: true })
