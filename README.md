@@ -43,7 +43,7 @@ $ npm run dev
 │  │  _README.md
 │  │
 │  └─demo
-│          helloworld.vue
+│          index.vue
 │          z-routes.js
 │
 └─store
