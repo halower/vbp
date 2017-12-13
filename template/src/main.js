@@ -2,32 +2,34 @@
 {{/if_eq}}
 import Vue from 'vue'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 import App from './App'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+import mixins from '@/mixins'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 {{#router}}
-import Router from 'vue-router'
+import Router from 'vue-router'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 import { createRouter } from '@/config/routes'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 import { sync } from 'vuex-router-sync'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 {{/router}}
-import { apistore } from '@/config/api/api.store'
-import directive from '@/directives'
-import * as filters from '@/filters'
-import { createStore } from '@/store'
-import eventbus from '@/store/eventbus'
-import VueI18n from 'vue-i18n'
-import messages from '@/config/i18n'
-import ProgressBar from '@/components/ProgressBar.vue'
+import { apistore } from '@/config/api/api.store'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+import directive from '@/directives'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+import * as filters from '@/filters'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+import { createStore } from '@/store'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+import eventbus from '@/store/eventbus'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+import VueI18n from 'vue-i18n'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+import messages from '@/config/i18n'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+import ProgressBar from '@/components/ProgressBar.vue'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 
 Object.keys(filters).forEach(key => {
-  Vue.filter(key, filters[key])
+  Vue.filter(key, filters[key]){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 })
 
-Vue.use(directive)
+Vue.use(directive){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 {{#router}}
-Vue.use(Router)
-Vue.use(VueI18n)
+Vue.use(Router){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+Vue.use(VueI18n){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+Vue.mixin(mixins){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 
-const store = createStore()
-const router = createRouter()
-sync(store, router)
+const store = createStore(){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+const router = createRouter(){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+sync(store, router){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 {{/router}}
 
 const i18n = new VueI18n({
@@ -35,11 +37,11 @@ const i18n = new VueI18n({
   messages
 })
 
-const bar = Vue.prototype.$bar = new Vue(ProgressBar).$mount()
-document.body.appendChild(bar.$el)
+const bar = Vue.prototype.$bar = new Vue(ProgressBar).$mount(){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+document.body.appendChild(bar.$el){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 
-Vue.prototype.$api = apistore
-Vue.prototype.$eventbus = eventbus
+Vue.prototype.$api = apistore{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+Vue.prototype.$eventbus = eventbus{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 Vue.config.productionTip = false{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 /* eslint-disable no-new */
 new Vue({
