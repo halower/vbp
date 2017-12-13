@@ -5,9 +5,6 @@ import test from './modules/test'
 
 Vue.use(Vuex)
 
-export const state = {
-}
-
 export const mutations = {
 }
 
@@ -17,12 +14,18 @@ export const actions = {
 export const getters = {
 }
 
-export default new Vuex.Store({
-  modules: {
-    test
-  },
-  state,
-  getters,
-  actions,
-  mutations
-})
+Vue.use(Vuex)
+
+export function createStore () {
+  return new Vuex.Store({
+    modules: {
+      test
+    },
+    state: {},
+    actions,
+    mutations,
+    getters
+  })
+}
+
+

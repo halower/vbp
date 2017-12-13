@@ -8,54 +8,7 @@ $ cd my-project
 $ npm install
 $ npm run dev
 ```
-`生成文档结构`
-```
-│  App.vue
-│  main.js
-│
-├─assets
-│      logo.png
-│
-├─components
-│      _README.md
-│
-├─config
-│      apistore.js
-│      baseapi.js
-│      api.conf.js
-│      routestore.js
-│      service.conf.js
-│      _README.md
-│
-├─directives
-│      index.js
-│      _README.md
-│
-├─filters
-│      index.js
-│      _README.md
-|
-├─fetch
-│      demo-api.js
-│      _README.md
-│
-├─pages
-│  │  _README.md
-│  │
-│  └─demo
-│          helloworld.vue
-│          z-routes.js
-│
-└─store
-    │  eventbus.js
-    │  index.js
-    │  mutation-types.js
-    │  store.js
-    │  _README.md
-    │
-    └─modules
-            test.js
-```
+
 # 项目说明
 
 ## 组件相关文件夹说明 (components)
@@ -82,7 +35,7 @@ $ npm run dev
 - 功能: 按照项目的需求初始化一些服务的配置参数,例如请求`http://127.0.0.1/api/test`,则根路径(`baseUrl`)为`http://127.0.0.1`,这样在`api.conf.js`只需要写相对路径，其中```baseUrl```为必须参数
 > 
 
-### `apistore.js`
+### `api.store.js`
 - 功能:
 >   作为所有业务请求的入口,将所有的http相关的处理从页面组件中剥离,在服务模块中集中处理完复杂逻辑等操作，减少页面臃肿程度.
 - 页面调用方法：(我们将所有的服务模块全部包装到this.$api中,以便识别服务)
@@ -96,7 +49,7 @@ $ npm run dev
 - 功能:
 > 作为所有服务对象的基类,包含了请求地址代理,统一的请求入口(`get,post` ect.)
 
-### `routestore.js`
+### `routes.store.js`
 - 功能:
 > 集中的路由管理中心,将各个业务模块中的路由统一整理合并
 - 用法：

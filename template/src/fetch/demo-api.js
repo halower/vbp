@@ -1,4 +1,4 @@
-import BaseApiController from '@/config/baseapi'
+import BaseApiController from '@/config/api/baseapi'
 
 /**
  * @class 演示业务功能

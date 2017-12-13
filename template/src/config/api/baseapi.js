@@ -1,6 +1,6 @@
 import axios from 'axios'
 import projconf from '@/config/service.conf'
-import * as request from '@/config/api.conf'
+import * as request from '@/config/api/api.conf'
 
 export default class BaseApiController {
   constructor () {

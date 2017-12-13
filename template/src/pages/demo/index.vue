@@ -16,11 +16,15 @@ import { createNamespacedHelpers } from 'vuex'
 const { mapState, mapActions, mapGetters } = createNamespacedHelpers('test')
 
 export default {
-  name: 'helloworld',
+  name: 'demo_index',
   data () {
     return {
       lang: 'zh'
     }
+  },
+  mounted () {
+    this.$bar.start()
+    setTimeout(() => this.$bar.finish(), 2000)
   },
   computed: {
     ...mapState(['code']),
