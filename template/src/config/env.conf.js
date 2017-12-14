@@ -2,7 +2,7 @@
  *  服务配置项
  * @param baseURL 服务请求的根路径
  */
-let baseUrl = '' 
+let baseUrl = ''
 
 switch (process.env.NODE_ENV) {
   case 'development': {
@@ -19,6 +19,6 @@ switch (process.env.NODE_ENV) {
   }
 }
 
-export {
+export default {
   baseUrl
 }

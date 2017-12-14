@@ -1,12 +1,12 @@
 import axios from 'axios'
-import { baseURL } from '@/config/service.conf'
+import envConf from '@/config/env.conf'
 import * as request from '@/config/api/api.conf'
 
 export default class BaseApiController {
   constructor () {
     axios.defaults.timeout = 5000
     axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=UTF-8'
-    axios.defaults.baseURL = baseURL
+    axios.defaults.baseURL = envConf.baseUrl
     this._req = request
     Object.keys(this._req).forEach(key => this._proxy(key))
   }
