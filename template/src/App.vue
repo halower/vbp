@@ -4,20 +4,25 @@
     {{#router}}
     <router-view/>
     {{else}}
-    <HelloWorld/>
+    <demo/>
     {{/router}}
   </div>
 </template>
 
 <script>
 {{#unless router}}
-import HelloWorld from '@/pages/demo/HelloWorld'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+import Demo from '@/pages/demo/index'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 
 {{/unless}}
 export default {
+  {{#vuesocket}}
+  beforeCreate () {
+    this.$store.commit('initSocket', this.$socket)
+  },{{#if_eq lintConfig "airbnb"}},{{/if_eq}}
+  {{/vuesocket}}
   name: 'app'{{#router}}{{#if_eq lintConfig "airbnb"}},{{/if_eq}}{{else}},
   components: {
-    HelloWorld{{#if_eq lintConfig "airbnb"}},{{/if_eq}}
+    Demo{{#if_eq lintConfig "airbnb"}},{{/if_eq}}
   }{{#if_eq lintConfig "airbnb"}},{{/if_eq}}{{/router}}
 }{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 </script>

@@ -70,6 +70,14 @@ module.exports = {
         }
       ]
     },
+    "vuesocket": {
+      "type": "confirm",
+      "message": "集成Vue-Socket.io开发响应式项目?"
+    },
+    "socketio": {
+      "type": "string",
+      "message": "如果你选择集成vue-socket.io 请输入 你的socket.io服务端远程地址"
+    },
     "unit": {
       "type": "confirm",
       "message": "安装测试框架 Karma + Mocha?"

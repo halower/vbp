@@ -14,6 +14,9 @@ import * as filters from '@/filters'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 import { createStore } from '@/store'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 import eventbus from '@/store/eventbus'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 import VueI18n from 'vue-i18n'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+{{#vuesocket}}
+import VueSocketio from 'vue-socket.io'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+{{/vuesocket}}
 import messages from '@/config/i18n'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 import ProgressBar from '@/components/ProgressBar.vue'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 
@@ -31,7 +34,9 @@ const store = createStore(){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 const router = createRouter(){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 sync(store, router){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 {{/router}}
-
+{{#vuesocket}}
+Vue.use(VueSocketio, '{{socketio}}', store){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+{{/vuesocket}}
 const i18n = new VueI18n({
   locale: 'zh',
   messages

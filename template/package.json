@@ -19,7 +19,8 @@
     "vue-router": "^3.0.1"{{/router}},
     "vuex": "^3.0.0"{{#router}},
     "vuex-router-sync": "^5.0.0"{{/router}},
-    "vue-i18n": "^7.3.2"
+    "vue-i18n": "^7.3.2"{{#vuesocket}},
+    "vue-socket.io": "^2.1.1-a"{{/vuesocket}}
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
