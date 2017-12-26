@@ -170,3 +170,5 @@ export default {
 this.$eventbus.on(event: string | Array<string>, fn: Function)
 this.$eventbus.emit(event: string, data: Object)
 ```
+#### 目前正在使用的企业
+![](http://www.28zn.cn/Public/Home/images/logo.png)
