@@ -7,8 +7,13 @@ Vue.use(Router)
 export function createRouter () {
   return new Router({
     mode: 'history',
-    fallback: false,
-    scrollBehavior: () => ({ y: 0 }),
+    scrollBehavior: (to, from, savedPosition) => {
+      if (savedPosition) {
+        return savedPosition
+      } else {
+        return { x: 0, y: 0 }
+      }
+    },
     routes
   })
 }

@@ -48,6 +48,8 @@ document.body.appendChild(bar.$el){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 Vue.prototype.$api = apistore{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 Vue.prototype.$eventbus = eventbus{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 Vue.config.productionTip = false{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+Vue.config.devtools = true{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+Vue.config.debug = true{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

@@ -64,7 +64,7 @@ module.exports = {
           "short": "Airbnb"
         },
         {
-          "name": "none (配置你自己的)",
+          "name": "none (自定义配置)",
           "value": "none",
           "short": "none"
         }
@@ -72,11 +72,11 @@ module.exports = {
     },
     "vuesocket": {
       "type": "confirm",
-      "message": "集成Vue-Socket.io开发响应式项目?"
+      "message": "集成vue-socket.io开发响应式项目?"
     },
     "socketio": {
       "type": "string",
-      "message": "如果你选择集成vue-socket.io 请输入 你的socket.io服务端远程地址"
+      "message": "如果你选择集成vue-socket.io请输入你的远程服务端地址否则请忽略此项:"
     },
     "unit": {
       "type": "confirm",
