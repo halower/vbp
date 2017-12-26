@@ -6,7 +6,7 @@ export default class BaseApiController {
   constructor () {
     axios.defaults.timeout = 5000
     axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=UTF-8'
-    axios.defaults.baseURL = envConf.baseUrl
+    axios.defaults.baseURL = envConf.REMOTE_ADDR
     this._req = request
     Object.keys(this._req).forEach(key => this._proxy(key))
   }

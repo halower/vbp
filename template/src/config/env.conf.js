@@ -2,23 +2,23 @@
  *  服务配置项
  * @param baseURL 服务请求的根路径
  */
-let baseUrl = ''
+let REMOTE_ADDR = ''
 
 switch (process.env.NODE_ENV) {
   case 'development': {
-    baseUrl = ''
+    REMOTE_ADDR = ''
     break
   }
   case 'production': {
-    baseUrl = ''
+    REMOTE_ADDR = ''
     break
   }
   case 'test': {
-    baseUrl = ''
+    REMOTE_ADDR = ''
     break
   }
 }
 
 export default {
-  baseUrl
+  REMOTE_ADDR
 }
