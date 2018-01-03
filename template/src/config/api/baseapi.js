@@ -1,5 +1,5 @@
 import axios from 'axios'
-import envConf from '@/config/env.conf'
+import envConf from '@/config/env/env.export'
 import * as request from '@/config/api/api.conf'
 
 export default class BaseApiController {
