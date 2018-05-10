@@ -4,7 +4,6 @@ import Vue from 'vue'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 import App from './App'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 import mixins from '@/mixins'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 {{#router}}
-import Router from 'vue-router'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 import { createRouter } from '@/config/routes'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 import { sync } from 'vuex-router-sync'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 {{/router}}
@@ -26,7 +25,6 @@ Object.keys(filters).forEach(key => {
 
 Vue.use(directive){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 {{#router}}
-Vue.use(Router){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 Vue.use(VueI18n){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 Vue.mixin(mixins){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 
