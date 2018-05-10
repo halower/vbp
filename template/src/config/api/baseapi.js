@@ -5,8 +5,23 @@ import * as request from '@/config/api/api.conf'
 export default class BaseApiController {
   constructor () {
     axios.defaults.timeout = 5000
-    axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=UTF-8'
+    axios.defaults.headers = {
+      'X-Requested-With': 'XMLHttpRequest',
+      'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+    }
     axios.defaults.baseURL = envConf.REMOTE_ADDR
+
+    axios.interceptors.response.use(function (response) {
+      return response
+    }, function (error) {
+      // todo: 做一些其他日志记录处理
+      return Promise.reject({
+        data: error.response.data,
+        status: error.response.status,
+        headers: error.response.headers,
+        message: error.message
+      })
+    })
     this._req = request
     Object.keys(this._req).forEach(key => this._proxy(key))
   }
@@ -25,60 +40,20 @@ export default class BaseApiController {
     })
   }
 
-  get (url, params) {
-    return new Promise((resolve, reject) => {
-      axios.get(url, {params})
-        .then(response => {
-          resolve(response.data)
-        }, err => {
-          reject(err)
-        })
-        .catch((error) => {
-          reject(error)
-        })
-    })
+  get (url, config) {
+    return axios.get(url, config)
   }
 
-  post (url, params) {
-    return new Promise((resolve, reject) => {
-      axios.post(url, params)
-        .then(response => {
-          resolve(response.data)
-        }, err => {
-          reject(err)
-        })
-        .catch((error) => {
-          reject(error)
-        })
-    })
+  post (url, data, config) {
+    return axios.post(url, data, config)
   }
 
-  delete (url, params) {
-    return new Promise((resolve, reject) => {
-      axios.delete(url, {params: params})
-        .then(response => {
-          resolve(response.data)
-        }, err => {
-          reject(err)
-        })
-        .catch((error) => {
-          reject(error)
-        })
-    })
+  delete (url, config) {
+    return axios.delete(url, config)
   }
 
-  put (url, params) {
-    return new Promise((resolve, reject) => {
-      axios.put(url, params)
-        .then(response => {
-          resolve(response.data)
-        }, err => {
-          reject(err)
-        })
-        .catch((error) => {
-          reject(error)
-        })
-    })
+  put (url, data, config) {
+    return axios.put(url, data, config)
   }
 
   all (promises) {
