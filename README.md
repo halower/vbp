@@ -1,4 +1,50 @@
 ## vbp 帮你自动搭建一个简单易用的前端业务框架。
+项目下载
+需要先安装nodejs
+npm install vue-cli               安装官方的vue-cli
+vue init halower/vbp mypro        halower/vbp 是海龙放置项目的github地址  mypro是自己项目的名字
+初始化项目的时候除了soket暂时不需要，其他建议都选择y
+
+cd mypro                          将命令行路径转到项目内 也可以关了到项目内再打开
+npm install                       此命令将安装项目packa.json中记录的node_modules依赖包
+
+npm run dev                       开发环境热加载项目  会自动打开网页，并在修改代码保存之后，更新网页
+npm run build                     上线环境打包命令，会生成dist文件夹，内部包含src目录下所有的文件
+                                  注意建议放在服务器根目录不然的话需要修改配置才能正常（原因为，打包默认为绝对路径）访问
+文件/文件夹介绍
+index.html                        项目html文件，只有这一个html
+build、config、test               webpack配置以及测试文件夹(一般不需要关心，需要修改webpack配置可以重点关注一下)
+static                            不需要打包编译的静态文件（npm run build之后会直接放到dist/static里面）
+src                               源码文件夹
+    main.js                       项目入口，所有文件都是从这里开始
+    app.vue                       app入口，默认有一个<router-view/>作为路由的容器
+    assets                        静态资源文件夹（可以存放图片、静态css，js，视频等等），会通过webpack进行打包
+                                  所以使用这里面的文件的时候请使用 import或者require的方式进行引入
+    components                    公共组件文件夹，项目用到的公共模块的存放地方（比如下拉框、table等等）如果引用第三方库，根据需要自行放置
+    config                        项目配置文件夹，包括api，route，多语言的配置
+          api                     项目api的配置文件夹
+              api.conf.js         项目的后台接口配置文件。
+              api.store,js        项目api的集中的地方，如果新增了自己的与后台交互的模块，需要在这里引入
+              baseapi.js          对官方的axios进行二次封装的地方
+          env                     后台服务器地址配置
+              env.conf,json       后台地址记录json
+              env.export.js       后台地址分发的js
+           i18n                   多语言配置（大多项目暂时不需要配置多语言）
+           routes                 项目路由配置
+               index.js           路由配置初始化的地方，
+                                  其中 mode: 'history' ，是前台的路由模式，history会去掉浏览器url中的#，这个需要服务器将404重定向到index.html中
+                                  scrollBehavior是路由变化是的统一行为（目前是自动回到页面顶部）
+               routes.store.js   将其他路由统一引入的文件
+           directives             vue自定义指令文件夹
+           fetch                  具体的逻辑处理文件夹，比如与后台交互需要进行数据处理等等
+           filters                vue自定义过滤器文件夹
+           languages              多语言具体文件存放
+           mixins                 混入文件夹（不用管）
+           pages                  具体页面文件夹（建议是每一个页面自己相应的配置z-routers.js,如果配置了，需要引入到routes.store.js中）
+           store                  vuex（项目状态存放文件夹），通常用来存放项目中公共的状态，比如用户名，等等，其他的也可以分别加入
+                                  需要注意的是，store的获取可以使用getter 和state      但是修改只能使用mutation，否则vue不会动态监听
+
+
 #### QQ讨论群:`255965810`
 # 如何使用
 ```
