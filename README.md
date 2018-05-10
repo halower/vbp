@@ -1,8 +1,5 @@
 ## vbp 帮你自动搭建一个简单易用的前端业务框架。
 ```
-需要先安装nodejs
-npm install vue-cli               安装官方的vue-cli
-vue init halower/vbp mypro        halower/vbp 是海龙放置项目的github地址  mypro是自己项目的名字
 初始化项目的时候除了soket暂时不需要，其他建议都选择y
 
 cd mypro                          将命令行路径转到项目内 也可以关了到项目内再打开
