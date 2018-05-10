@@ -1,5 +1,5 @@
 ## vbp 帮你自动搭建一个简单易用的前端业务框架。
-项目下载
+```
 需要先安装nodejs
 npm install vue-cli               安装官方的vue-cli
 vue init halower/vbp mypro        halower/vbp 是海龙放置项目的github地址  mypro是自己项目的名字
@@ -44,6 +44,7 @@ src                               源码文件夹
            store                  vuex（项目状态存放文件夹），通常用来存放项目中公共的状态，比如用户名，等等，其他的也可以分别加入
                                   需要注意的是，store的获取可以使用getter 和state      但是修改只能使用mutation，否则vue不会动态监听
 
+```
 
 #### QQ讨论群:`255965810`
 # 如何使用
