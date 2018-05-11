@@ -4,8 +4,7 @@ import routes from './routes.store'
 
 Vue.use(Router)
 
-export function createRouter () {
-  return new Router({
+export default new Router({
     mode: 'history',
     scrollBehavior: (to, from, savedPosition) => {
       if (savedPosition) {
@@ -15,5 +14,4 @@ export function createRouter () {
       }
     },
     routes
-  })
-}
+})
