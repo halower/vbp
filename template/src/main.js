@@ -4,7 +4,7 @@ import Vue from 'vue'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 import App from './App'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 import mixins from '@/mixins'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 {{#router}}
-import { createRouter } from '@/config/routes'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+import router from '@/config/routes'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 import { sync } from 'vuex-router-sync'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 {{/router}}
 import { apistore } from '@/config/api/api.store'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
@@ -29,7 +29,6 @@ Vue.use(VueI18n){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 Vue.mixin(mixins){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 
 const store = createStore(){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
-const router = createRouter(){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 sync(store, router){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 {{/router}}
 {{#vuesocket}}
