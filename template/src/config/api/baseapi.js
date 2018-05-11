@@ -15,12 +15,13 @@ export default class BaseApiController {
       return response
     }, function (error) {
       // todo: 做一些其他日志记录处理
-      return Promise.reject({
+      console.log({
         data: error.response.data,
         status: error.response.status,
         headers: error.response.headers,
         message: error.message
-      })
+      });
+      return Promise.reject(error)
     })
     this._req = request
     Object.keys(this._req).forEach(key => this._proxy(key))
