@@ -5,10 +5,6 @@ import * as request from '@/config/api/api.conf'
 export default class BaseApiController {
   constructor () {
     axios.defaults.timeout = 5000
-    axios.defaults.headers = {
-      'X-Requested-With': 'XMLHttpRequest',
-      'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
-    }
     axios.defaults.baseURL = envConf.REMOTE_ADDR
 
     axios.interceptors.response.use(function (response) {
